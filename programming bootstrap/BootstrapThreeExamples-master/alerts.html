@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bootstrap Alerts Kata</title>
+	<link rel="stylesheet" href="bootstrap.min.css" type="text/css">
+	<script type="text/javascript" src="jquery-1.9.0.js"></script>
+	<script type="text/javascript" src="bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h2>Bootstrap Alerts</h2>
+		<ul>
+			<li>use base class 'alert' and add classes like 'alert-warning' for styling.</li>
+		</ul>
+		<div class="alert alert-warning">
+			<p>This is an alert with 'alert' and 'alert-warning'</p>
+		</div>
+		<ul>
+			<li>can add an anchor to close the alert, needs data-dismiss="alert" and class="close"</li>
+		</ul>
+		<div class="alert alert-warning">
+			<a href="" data-dismiss="alert" class="close">&times;</a>
+			<p>This is an alert with 'alert' and 'alert-warning'</p>
+		</div>
+		<ul>
+			<li>can hide by default by adding a 'collapse' class and then showing the alert via js when relevant</li>
+		</ul>
+		<input type="button" value="Click To Show Alert" id="btnClickWithDefault" class="btn"/>
+		<div id="withCollapse" class="alert alert-warning collapse">
+			<a href="" data-dismiss="alert" class="close">&times;</a>
+			<p>This is an alert with 'alert' and 'alert-warning'</p>
+		</div>
+		<ul>
+			<li>
+				data-dismiss attribute will remove alert html from dom, to get around this you can use js events on the alert, e.g. alert.on("close.bs.alert", function(){ // do stuff}). Import to return false to stop event propogation.
+			</li>
+		</ul>
+		<input type="button" value="Click To Show Alert" id="btnClickWithoutDefault"  class="btn"/>
+		<div id="withoutDefault" class="alert alert-warning collapse">
+			<a href="" data-dismiss="alert" class="close">&times;</a>
+			<p>This is an alert with 'alert' and 'alert-warning'</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function onDocReady(){
+			$('#btnClickWithDefault').click(function(){
+				$('#withCollapse').show();
+			});
+
+			$('#btnClickWithoutDefault').click(function(){
+				$('#withoutDefault').show();
+			});
+			
+			// without default data-dismiss behaviour
+			$('#withoutDefault').on('close.bs.alert', function onAlertClosed(){
+				$(this).hide();
+				return false;
+			});
+		});
+	</script>
+</body>
+</html>

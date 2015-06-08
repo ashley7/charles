@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Bootstrap Carousel Kata</title>
+		<link rel="stylesheet" href="bootstrap.min.css" type="text/css">
+		<style>
+			.row{
+				height: 230px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Bootstrap Carousels</h2>
+		<ul>
+			<li>
+				create an outer div with 'carousel'  can use 'slide' or 'fade' on this div to control the animation
+			</li>
+			<li>
+				create a child div with 'carousel-inner' and put divs with 'item' inside this.
+			</li>
+			<li>
+				need to init carousels in js, e.g. $('#theCarousel').carousel()
+			</li>
+			<li>
+				need to give one of the items the 'active' class to start with
+			</li>
+		</ul>
+		<div class="row">
+			<div class="carousel slide col-sm-2 col-sm-offset-4 col-md-2 col-md-offset-4">
+				<div class="carousel-inner">
+					<div class="item active">
+						<img src="images/apple-logo-2.jpg"
+						class="img-responsive" alt="apple-logo">
+					</div>
+					<div class="item">
+						<img src="images/green-apple.jpg"
+						class="img-responsive" alt="greeen apple">
+					</div>
+					<div class="item">
+						<img src="images/red-apple.jpg"
+						class="img-responsive" alt="red apple">
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<ul>
+			<li>
+				can control delay through js option or data-interval attribute (in milliseconds)
+			</li>
+		</ul>
+		<div class="row">
+			<div class="carousel slide col-sm-2 col-sm-offset-4 col-md-2 col-md-offset-4" data-interval="1000">
+				<div class="carousel-inner">
+					<div class="item active">
+						<img src="images/apple-logo-2.jpg"
+						class="img-responsive" alt="apple-logo">
+					</div>
+					<div class="item">
+						<img src="images/green-apple.jpg"
+						class="img-responsive" alt="greeen apple">
+					</div>
+					<div class="item">
+						<img src="images/red-apple.jpg"
+						class="img-responsive" alt="red apple">
+					</div>
+				</div>
+			</div>
+		</div>
+		<ul>
+			<li>
+				can hide carousel on smaller screens by defining 'visible-md visible-lg'
+			</li>
+		</ul>
+		<div class="row">
+			<div class="carousel slide col-sm-2 col-sm-offset-4 col-md-2 col-md-offset-4 visible-lg visible-md" data-interval="1000">
+				<div class="carousel-inner">
+					<div class="item active">
+						<img src="images/apple-logo-2.jpg"
+						class="img-responsive" alt="apple-logo">
+					</div>
+					<div class="item">
+						<img src="images/green-apple.jpg"
+						class="img-responsive" alt="greeen apple">
+					</div>
+					<div class="item">
+						<img src="images/red-apple.jpg"
+						class="img-responsive" alt="red apple">
+					</div>
+				</div>
+			</div>
+		</div>
+		<ul>
+			<li>
+				use ol for navigation indicators
+			</li>
+			<li>
+				lis dont need content but need data-target=[id of carousel] and data-slide-to=[ordered number]
+			</li>
+			<li>
+				need to add an active for default behaviour.
+			</li>
+		</ul>
+		<div class="row">
+			<div id="carouselWithIdicators" class="carousel slide col-sm-2 col-sm-offset-4 col-md-2 col-md-offset-4" data-interval="4000">
+				<div class="carousel-inner">
+					<ol class="carousel-indicators">
+						<li data-target="#carouselWithIdicators" data-slide-to="0" class="active"></li>
+						<li data-target="#carouselWithIdicators" data-slide-to="1"></li>
+						<li data-target="#carouselWithIdicators" data-slide-to="2"></li>
+					</ol>
+					<div class="item active">
+						<img src="images/apple-logo-2.jpg"
+						class="img-responsive" alt="apple-logo">
+					</div>
+					<div class="item">
+						<img src="images/green-apple.jpg"
+						class="img-responsive" alt="greeen apple">
+					</div>
+					<div class="item">
+						<img src="images/red-apple.jpg"
+						class="img-responsive" alt="red apple">
+					</div>
+				</div>
+			</div>
+		</div>
+		<ul>
+			<li>
+				to get left/right navigation use a with
+				<ul>
+					<li>href = #theCarouselId</li>
+					<li>class = 'carousel-control left|right'</li>
+					<li>data-slide = "prev|next"</li>
+					<li>inside this put a span with class = 'icon-prev|icon-next'</li>
+				</ul>
+			</li>
+		</ul>
+		<div class="row">
+			<div id="carouselWithNav" class="carousel slide col-sm-2 col-sm-offset-4 col-md-2 col-md-offset-4" data-interval="4000">
+				<div class="carousel-inner">
+					<ol class="carousel-indicators">
+						<li data-target="#carouselWithNav" data-slide-to="0"  class="active"></li>
+						<li data-target="#carouselWithNav" data-slide-to="1"></li>
+						<li data-target="#carouselWithNav" data-slide-to="2"></li>
+					</ol>
+					<div class="item active">
+						<img src="images/apple-logo-2.jpg"
+						class="img-responsive" alt="apple-logo">
+					</div>
+					<div class="item">
+						<img src="images/green-apple.jpg"
+						class="img-responsive" alt="greeen apple">
+					</div>
+					<div class="item">
+						<img src="images/red-apple.jpg"
+						class="img-responsive" alt="red apple">
+					</div>
+				</div>
+				<a href="#carouselWithNav" class="carousel-control left" data-slide="prev">
+					<span class="icon-prev"></span>
+				</a>
+				<a href="#carouselWithNav" class="carousel-control right" data-slide="next">
+					<span class="icon-next"></span>
+				</a>
+			</div>
+		</div>
+		<ul>
+			<li>can div with class='carousel-caption' as sibling of carousel item</li>
+		</ul>
+		<div class="row">
+			<div id="carouselWithCaptions" class="carousel slide col-sm-2 col-sm-offset-4 col-md-2 col-md-offset-4" data-interval="4000">
+				<div class="carousel-inner">
+					<ol class="carousel-indicators">
+						<li data-target="#carouselWithCaptions" data-slide-to="0"  class="active"></li>
+						<li data-target="#carouselWithCaptions" data-slide-to="1"></li>
+						<li data-target="#carouselWithCaptions" data-slide-to="2"></li>
+					</ol>
+					<div class="item active">
+						<img src="images/apple-logo-2.jpg"
+						class="img-responsive" alt="apple-logo">
+						<div class="carousel-caption">
+							<h2>A Red Apple</h2>
+							<p>I don't like these as much as green apples</p>
+						</div>
+					</div>
+					<div class="item">
+						<img src="images/green-apple.jpg"
+						class="img-responsive" alt="greeen apple">
+						<div class="carousel-caption">
+							<h2>A Green Apple</h2>
+							<p>I like these ones</p>
+						</div>
+					</div>
+					<div class="item">
+						<img src="images/red-apple.jpg"
+						class="img-responsive" alt="red apple">
+						<div class="carousel-caption">
+							<h2>An Evil Apple</h2>
+							<p>hmmm.....</p>
+						</div>
+					</div>
+				</div>
+				<a href="#carouselWithCaptions" class="carousel-control left" data-slide="prev">
+					<span class="icon-prev"></span>
+				</a>
+				<a href="#carouselWithCaptions" class="carousel-control right" data-slide="next">
+					<span class="icon-next"></span>
+				</a>
+			</div>
+		</div>
+		<!-- scripts -->
+		<script type="text/javascript" src="jquery-1.9.0.js"></script>
+		<script type="text/javascript" src="bootstrap.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function onDocReady(){
+				$('.carousel').carousel();
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bootstrap Collapse Kata</title>
+	<link rel="stylesheet" href="bootstrap.min.css" type="text/css">
+	<script type="text/javascript" src="jquery-1.9.0.js"></script>
+	<script type="text/javascript" src="bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">	
+		<h2>Bootstrap Collapse Plugin</h2>
+		<li>can use anchor tag with a data-toggle='collapse' and with href set to id of div to collapse.  The div to collapse must also have class 'collapse'</li>
+		
+		<a href="#sectionOne" data-toggle="collapse">Section One</a>
+		<a href="#sectionTwo" data-toggle="collapse">Section Two</a>
+
+		<div id="sectionOne" class="collapse">
+			<div class="well">
+				section one
+			</div>
+		</div>
+
+		<div id="sectionTwo" class="collapse">
+			<div class="well">
+				section two
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

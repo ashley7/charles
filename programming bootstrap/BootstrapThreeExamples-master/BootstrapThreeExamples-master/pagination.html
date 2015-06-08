@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bootstrap pagination kata</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<h2>Bootstrap Pagination</h2>
+
+		<p>use a ul with 'pager', li's for prev next and pages etc.</p>
+		<ul class="pager">
+			<li><a href="">Previous</a></li>
+			<li><a href="">1</a></li>
+			<li><a href="">2</a></li>
+			<li><a href="">3</a></li>
+			<li><a href="">Next</a></li>
+		</ul>
+		
+		<p>use 'previous' and 'next' in lis to float to left and right edges of container</p>
+		<ul class="pager">
+			<li class="previous"><a href="">Previous</a></li>
+			<li><a href="">1</a></li>
+			<li><a href="">2</a></li>
+			<li><a href="">3</a></li>
+			<li class="next"><a href="" >Next</a></li>
+		</ul>
+
+		<p>'pagination' makes it a continous control, can also use 'pagination-sm' and 'pagination-lg'</p>
+		<ul class="pagination pagination-sm">
+			<li class="previous"><a href="">Previous</a></li>
+			<li><a href="">1</a></li>
+			<li><a href="">2</a></li>
+			<li><a href="">3</a></li>
+			<li class="next"><a href="" >Next</a></li>
+		</ul>
+		<ul class="pagination pagination-lg">
+			<li class="previous"><a href="">Previous</a></li>
+			<li><a href="">1</a></li>
+			<li><a href="">2</a></li>
+			<li><a href="">3</a></li>
+			<li class="next"><a href="" >Next</a></li>
+		</ul>
+
+		<p>can add 'active' to li</p>
+		<ul class="pagination">
+			<li class="previous"><a href="">Previous</a></li>
+			<li><a href="">1</a></li>
+			<li class="active"><a href="">2</a></li>
+			<li><a href="">3</a></li>
+			<li class="next"><a href="" >Next</a></li>
+		</ul>
+
+		<p>can add 'disabled' to li for next and previous when on first or last page</p>
+		<ul class="pagination">
+			<li class="previous disabled"><a href="">Previous</a></li>
+			<li><a href="#">1</a></li>
+			<li><a href="">2</a></li>
+			<li><a href="">3</a></li>
+			<li class="next"><a href="" >Next</a></li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Bootstrap Tab Kata</title>
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<script type="text/javascript" src="jquery-1.9.0.js"></script>
+		<script type="text/javascript" src="bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h2>Bootstrap Tabs</h2>
+			<ul>
+				<li>
+					use an unordered list for navigation. can use 'nav' and 'nav-tabs' to get look and feel
+				</li>
+				<li>
+					use div with ids matching hrefs in ul for tab content
+				</li>
+				<li>
+					li's also need data-toggle="tab" and divs need class 'tab-pane'
+				</li>
+				<li>
+					wrap content panels in a container div with 'tab-content'
+				</li>
+				<li>
+					can add 'active' to li and div to select a default tab
+				</li>
+				<li>
+					to make tabs take entire container width add 'nav-justified' to ul
+				</li>
+			</ul>
+			</br>
+			<div class="exercise">
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="#tabOne" data-toggle="tab">One</a></li>
+					<li><a href="#tabTwo" data-toggle="tab">Two</a></li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane well active" id="tabOne">
+						This is tab one's content
+					</div>
+					<div class="tab-pane well" id="tabTwo">
+						This is tab two's content
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

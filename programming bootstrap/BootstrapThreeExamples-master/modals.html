@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Bootstrap Modals Kata</title>
+		<link rel="stylesheet" href="bootstrap.min.css" type="text/css">
+		<script type="text/javascript" src="jquery-1.9.0.js"></script>
+		<script type="text/javascript" src="bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h2>Bootstrap Modals</h2>
+			<h3>Markup</h3>
+			<ul>
+				<li> use an outter div with 'modal' and an id</li>
+				<li> inside that a div with 'modal-dialog'</li>
+				<li> inside that a div with 'modal-content'</li>
+				<li> inside 'modal-content' you can have 'modal-header', 'modal-body', 'modal-footer'</li>
+				<li> this will be invisible by default can use an anchor with a href matching the 'modal' div id.  also needs a data-toggle='modal'</li>
+				<li> to close dialog you can use a data-dismiss="modal" on close button</li>
+				<li> for 'x' in upper right hand corner use an anchor with class="close" and data-dismiss="modal" and content of &amptimes
+				</li>
+			</ul>
+			<a href="#myModal" class="btn btn-success" data-toggle="modal">Show Modal</a>
+			<div id="myModal" class="modal fade">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<a href="" class="close" data-dismiss="modal">
+								&times
+							</a>
+							<h2>Are you sure?</h2>
+						</div>
+						<div class="modal-body">
+							<p>Are you sure you want to eat that cheeseburger?</p>
+						</div>
+						<div class="modal-footer">
+							<button class="btn btn-success" data-dismiss="modal">Yes</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h3>Events</h3>
+			<ul>
+				<li>usually will need to interact with modal in javascript</li>
+				<li>bootstrap using jquery plugin style, e.g. $('#myModal').modal(options)</li>
+				<li>can handle other modal events e.g. $myModal.on('hidden.bs.modal'), function(){ // stuff here});</li>
+			</ul>
+			<div id="eventModal" class="modal fade">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<a href="" class="close" data-dismiss="modal">
+								&times
+							</a>
+							<h2>Are you sure?</h2>
+						</div>
+						<div class="modal-body">
+							<p>Are you sure you want to eat that cheeseburger?</p>
+						</div>
+						<div class="modal-footer">
+							<button class="btn btn-success" data-dismiss="modal">Yes</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a href="" id="modalAnchor" class="btn btn-success">Open Modal through js</a>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var modalAnchor = $('#modalAnchor');
+				var eventModal = $('#eventModal');
+				
+				modalAnchor.click(function(){
+					eventModal.modal('show');
+					return false;
+				});
+
+				eventModal.on('hidden.bs.modal', function onModalHidden(){
+					alert('modal was hidden');
+				});
+			});
+		</script>
+	</body>
+</html>

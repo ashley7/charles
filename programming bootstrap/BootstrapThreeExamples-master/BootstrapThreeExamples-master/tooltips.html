@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Bootstrap Tooltip Kata</title>
+		<link rel="stylesheet" href="bootstrap.min.css" type="text/css">
+		<script type="text/javascript" src="jquery-1.9.0.js"></script>
+		<script type="text/javascript" src="bootstrap.min.js"></script>
+		<style>
+			ul {
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h2>Bootstrap Tooltips</h2>
+			<ul>
+				<li>because searching every element with a title is computationally expensive, you need to wire tooltips up manually in js</li>
+				<li>the element you want a tooltip for needs a title attribute and a data-toggle="tooltip"</li>
+				<li>then in js use something like $('#myInput').tooltip();</li>
+			</ul>
+			<input
+			type="submit"
+			value="Hover for tooltip"
+			data-toggle="tooltip"
+			title="a tooltip text"
+			class="btn btn-success tooltip-btn" />
+			<ul>
+				<li>can pass an options object to tooltip func, e.g. {placement: 'left'}</li>
+				<li>can also do most things through data attributes, e.g. data-placement="left", data-delay="500"</li>
+			</ul>
+			<input 
+			type="submit"
+			value="Hover for tooltip"
+			data-toggle="tooltip"
+			title="a tooltip text"
+			class="btn btn-success tooltip-btn"
+			data-placement="left" />
+			<ul>
+				<li>options in js will override data-attributes</li>
+				<li>sometimes data attributes can not do what you are after e.g. delay { show: 500, hide: 0}</li>
+			</ul>
+			<input 
+			id="overridingOptionsInjs"
+			type="submit"
+			value="Hover for tooltip"
+			data-toggle="tooltip"
+			title="a tooltip text"
+			class="btn btn-success"
+			data-placement="left" />
+			<ul>
+				<li>can also use data-html="true" then put html in title attribute</li>
+			</ul>
+			<input 
+			type="submit"
+			data-html="true"
+			value="Hover for tooltip"
+			data-toggle="tooltip"
+			title="<img src='images/apple-logo.jpg' class='img-responsive' />"
+			class="btn btn-success tooltip-btn"
+			data-placement="right" />
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.tooltip-btn').tooltip();
+
+				$('#overridingOptionsInjs').tooltip({
+					delay: { show: 500, hide: 0},
+					placement: "right"
+				})
+			});
+		</script>
+	</body>
+</html>

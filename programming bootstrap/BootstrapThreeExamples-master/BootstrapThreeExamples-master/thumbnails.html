@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Bootstrap thumbnails kata</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	</head>
+	<body>
+		<div class="container">
+			<h2>Bootstrap thumbnails</h2>
+			<p>without any styles</p>
+			<img src="images/red-apple.jpg" alt="red apple">
+			<img src="images/green-apple.jpg" alt="green apple">
+			<img src="images/apple-logo.jpg" alt="apple logo">
+			
+			<p>with divs wrapping images with size classes e.g. 'col-md-5'</p>
+			<div class="row">
+				<div class="col-md-4 col-sm-2">
+					<img src="images/red-apple.jpg" alt="red apple">
+				</div>
+				<div class="col-md-4 col-sm-2">
+					<img src="images/green-apple.jpg" alt="green apple">
+				</div>
+				<div class="col-md-4 col-sm-2">
+					<img src="images/apple-logo.jpg" alt="apple logo">
+				</div>
+			</div>
+			<p>can add 'img-responsive' but still doesnt make them look like thumbnails</p>
+			<div class="row">
+				<div class="col-md-4 col-sm-2">
+					<img src="images/red-apple.jpg" alt="red apple" class="img-responsive">
+				</div>
+				<div class="col-md-4 col-sm-2">
+					<img src="images/green-apple.jpg" alt="green apple" class="img-responsive">
+				</div>
+				<div class="col-md-4 col-sm-2">
+					<img src="images/apple-logo.jpg" alt="apple logo" class="img-responsive">
+				</div>
+			</div>
+			<p>adding 'thumbnail' to containing element will give you a border box</p>
+			<div class="row">
+				<div class="col-md-4 col-sm-2 thumbnail">
+					<img src="images/red-apple.jpg" alt="red apple" class="img-responsive">
+				</div>
+				<div class="col-md-4 col-sm-2 thumbnail" >
+					<img src="images/green-apple.jpg" alt="green apple" class="img-responsive">
+				</div>
+				<div class="col-md-4 col-sm-2 thumbnail" >
+					<img src="images/apple-logo.jpg" alt="apple logo" class="img-responsive">
+				</div>
+			</div>
+			<p>to use captions wrap in a div and add 'thumbnail' there instead, then add a child div with 'caption' and put html in there</p>
+			<div class="row">
+				<div class="col-md-4 col-sm-2 thumbnail">
+					<img src="images/red-apple.jpg" alt="red apple" class="img-responsive">
+					<div class="caption">
+						<h2>Red</h2>
+						<p>Red apples are okay</p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-2 thumbnail" >
+					<img src="images/green-apple.jpg" alt="green apple" class="img-responsive">
+					<div class="caption">
+						<h2>Green</h2>
+						<p>Green apples okay, bit sour sometimes</p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-2 thumbnail" >
+					<img src="images/apple-logo.jpg" alt="apple logo" class="img-responsive">
+					<div class="caption">
+						<h2>Company Apple</h2>
+						<p>Not sure about this one...</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
